@@ -7,7 +7,7 @@ calculation.addEventListener('click', function totalCalculation(){
     const rent = document.getElementById('rentAmount');
     const cloth = document.getElementById('clotheAmount');
     const income = document.getElementById('incomeAmount');
-    const incomeText = income.innerText;
+    const incomeText = income.value;
     const previousIncome = parseFloat(incomeText);
 
 
@@ -16,6 +16,7 @@ calculation.addEventListener('click', function totalCalculation(){
     const totalExpanse = document.getElementById('totalExpanse');
     const totalExpanseText = totalExpanse.innerText;
     totalExpanse.innerText = totalCost;
+    
 
     // balance
     const totalAmount = previousIncome - totalCost;
@@ -24,9 +25,9 @@ calculation.addEventListener('click', function totalCalculation(){
     totalBalance.innerText = totalAmount;
 
     // reset value
-    food.value = '';
-    rent.value = '';
-    cloth.value = '';
+    // food.value = '';
+    // rent.value = '';
+    // cloth.value = '';
 
     console.log(totalBalanceText);
 })
