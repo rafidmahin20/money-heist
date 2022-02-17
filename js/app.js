@@ -7,6 +7,8 @@ calculation.addEventListener('click', function totalCalculation(){
     const rent = document.getElementById('rentAmount');
     const cloth = document.getElementById('clotheAmount');
     const income = document.getElementById('incomeAmount');
+    const incomeText = income.innerText;
+    const previousIncome = parseFloat(incomeText);
 
 
     // total expanse
@@ -14,9 +16,9 @@ calculation.addEventListener('click', function totalCalculation(){
     const totalExpanse = document.getElementById('totalExpanse');
     const totalExpanseText = totalExpanse.innerText;
     totalExpanse.innerText = totalCost;
-    const totalAmount = +income - totalCost;
 
     // balance
+    const totalAmount = previousIncome - totalCost;
     const totalBalance = document.getElementById('balance');
     const totalBalanceText = totalBalance.innerText;
     totalBalance.innerText = totalAmount;
