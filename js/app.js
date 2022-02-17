@@ -31,3 +31,23 @@ calculation.addEventListener('click', function totalCalculation(){
 
     console.log(totalBalanceText);
 })
+// saving operation
+const saveButton = document.getElementById('saveBtn');
+
+saveButton.addEventListener('click', function savingOp(){
+    const save = document.getElementById('save');
+    const saveText = save.value;
+    const previousSave = parseFloat(saveText);
+
+
+    // const savePercentage = (previousSave / 100)*
+    const newPercent = (previousSave*0.2)
+    const saveAmount = document.getElementById('savingAmount');
+    saveAmount.innerText = newPercent;
+    const newBalance = document.getElementById('balance');
+    const newBalanceNumber = parseFloat(newBalance.innerText);
+    const remainingBalance = document.getElementById('remainingBalance');
+    remainingBalanceNumber.innerText = newBalanceNumber + newPercent;
+
+    console.log(remainingBalance);
+})
