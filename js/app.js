@@ -10,6 +10,10 @@ document.getElementById('Calculate').addEventListener('click', ()=>{
    const foodValue = parseFloat(document.getElementById('foodAmount').value);
    const rentValue = parseFloat(document.getElementById('rentAmount').value);
    const clotheValue = parseFloat(document.getElementById('clotheAmount').value);
+
+//    if(typeof incomeValue != 'number'){
+//        alert('give a valid value & try again');
+//    }
    
    const expansecalculate =foodValue + rentValue + clotheValue;
   console.log(expansecalculate, 'this is expanse value');
