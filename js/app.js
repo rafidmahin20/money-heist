@@ -1,35 +1,30 @@
 // calculating the total expanse
 
-const incomeInput = document.getElementById('incomeAmount');
-const foodInput = document.getElementById('foodAmount');
-const rentInput = document.getElementById('rentAmount');
-const clothInput = document.getElementById('clotheAmount');
+const calculation = document.getElementById('Calculate');
 
-// buttons
-const calculateBtn = document.getElementById('Calculate');
+calculation.addEventListener('click', function totalCalculation(){
+    const food = document.getElementById('foodAmount');
+    const rent = document.getElementById('rentAmount');
+    const cloth = document.getElementById('clotheAmount');
+    const income = document.getElementById('incomeAmount');
 
-// results
 
-const totalExpanseInput = document.getElementById('totalExpanse');
+    // total expanse
+    const totalCost = +food.value + +rent.value + +cloth.value;
+    const totalExpanse = document.getElementById('totalExpanse');
+    const totalExpanseText = totalExpanse.innerText;
+    totalExpanse.innerText = totalCost;
+    const totalAmount = +income - totalCost;
 
-function calculateTotalExpanse(){
-    let food = Number(foodInput.value);
-    let rent = Number(rentInput.value);
-    let clothes = Number(clothInput.value);
-    
-    const totalExp = food + rent + clothes;
+    // balance
+    const totalBalance = document.getElementById('balance');
+    const totalBalanceText = totalBalance.innerText;
+    totalBalance.innerText = totalAmount;
 
-    totalExpanseInput.textContent = totalExp.toFixed(2);
-    
-}
+    // reset value
+    food.value = '';
+    rent.value = '';
+    cloth.value = '';
 
-function handleEvent(){
-    if(Number(foodInput.value) && Number(rentInput.value) && Number(clothInput.value)){
-        calculateTotalExpanse()
-    }
-    else{
-        alert('Give a valid value and try again');
-    }
-}
-
-calculateBtn.addEventListener('click', handleEvent);
+    console.log(totalBalanceText);
+})
